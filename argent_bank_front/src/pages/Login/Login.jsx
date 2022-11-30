@@ -97,7 +97,7 @@ return (
             checked={checked}
           />
           {((<br />), (<span className="error_login">{errorMSG} </span>))}
-          <Button nameClass="button" title="Sign In" type="submit" />
+          <Button className="button" title="Sign In" type="submit" />
         </form>
       </section>
     </div>
