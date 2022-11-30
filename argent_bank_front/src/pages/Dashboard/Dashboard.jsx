@@ -1,6 +1,5 @@
 import React from 'react'
-import Header from '../../components/Header/Header'
-import Footer from '../../components/Footer/Footer'
+
 //STYLE
 import './Dashboard.css'
 
@@ -9,8 +8,7 @@ import './Dashboard.css'
 
 export default function Dashboard() {
     return (
-        <div className="container_page">
-            <Header />
+        <div className="container_page">  
             <div className="container_block">
                 <main>
                     <div className="hero">
@@ -25,7 +23,7 @@ export default function Dashboard() {
                     <section className="features">
                         <h2 className="sr-only">Features</h2>
                         <div className="feature-item">
-                            <img src="./../assets/icon-chat.png" alt="Chat Icon" className="feature-icon" />
+                            <img src="/assets/icon-chat.png" alt="Chat Icon" className="feature-icon" />
                             <h3 className="feature-item-title">You are our #1 priority</h3>
                             <p>
                                 Need to talk to a representative? You can get in touch through our
@@ -34,7 +32,7 @@ export default function Dashboard() {
                         </div>
                         <div className="feature-item">
                             <img
-                                src="./../src/assets/icon-money.png"
+                                src="./assets/icon-money.png"
                                 alt="Chat Icon"
                                 className="feature-icon"
                             />
@@ -45,7 +43,7 @@ export default function Dashboard() {
                         </div>
                         <div className="feature-item">
                             <img
-                                src="./../src/assets/icon-security.png"
+                                src="./assets/icon-security.png"
                                 alt="Chat Icon"
                                 className="feature-icon"
                             />
@@ -58,7 +56,6 @@ export default function Dashboard() {
                     </section>
                 </main>
             </div>
-            <Footer />
         </div >
     )
 }

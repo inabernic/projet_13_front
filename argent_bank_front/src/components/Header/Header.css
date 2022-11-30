@@ -1,0 +1,39 @@
+.header__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+}
+
+.header__nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.header__nav-logo__image {
+    max-width: 100%;
+    width: 200px;
+}
+
+.header__nav a {
+    font-weight: bold;
+    color: #2c3e50
+}
+
+a.router-link-exact-active {
+    color: #42b983;
+}
+
+.header__nav__item a {
+    text-decoration: none;
+    margin-right: 0.5rem;
+}
+
+.header__nav__item a:hover {
+    text-decoration: underline;
+}
+
+.header__nav__item a img {
+    width: 14px;
+    margin-right: 0.3rem;
+}

@@ -1,27 +1,86 @@
-import React from 'react'
-//import './Nav.css'
-import { Link } from 'react-router-dom'
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-export default function Header() {
-    return (
+import './Header.css'
 
-        <nav class="main-nav">
-            <a class="main-nav-logo" href="./index.html">
-                <Link className="link" to="/" >
-                    <img
-                        class="main-nav-logo-image"
-                        src="./../src/assets/argentBankLogo.png"
-                        alt="Argent Bank Logo"
-                    />
-                </Link>
-                <h1 class="sr-only">Argent Bank</h1>
-            </a>
-            <div>
-                <a class="main-nav-item" href="./sign-in.html">
-                    <i class="fa fa-user-circle"></i>
-                    Sign In
-                </a>
-            </div>
-        </nav>
-    )
-}
+
+/**
+ * C'est une fonction qui renvoie un élément de navigation avec un logo et un lien vers la page de
+ * connexion si l'utilisateur n'est pas connecté, et un lien vers le profil de l'utilisateur et un lien
+ * pour se déconnecter si l'utilisateur est connecté
+ *
+ * @prop   {String}  firstName       prénom de l'utilisateur
+ * @prop   {Boolean}  isLogged        Si l'utilisateur est connecté
+ * @prop   {Function}  disconnect      Si l'utilisateur a choisi de garder sa session
+ * @prop   {Function}  onlyDisconnect  Si l'utilisateur à fermer sa session
+ * @prop   {String}  id              De l'utilisateur
+ * @prop   {Boolean}  remember        choix d'une session (ouverte / fermée)
+ *
+ * @return  {React.ReactElement}  Un élément de navigation avec un logo et un lien vers la page de connexion.
+ */
+const Header = ({
+  firstName,
+  isLogged,
+  disconnect,
+  onlyDisconnect,
+  id,
+  remember,
+}) => {
+  function handleDisconnect() {
+    if (remember) {
+      disconnect(remember);
+    } else {
+      onlyDisconnect();
+    }
+  }
+
+  return (
+    <nav className="header__nav">
+      <div className="header__nav-logo">
+        <Link to="/">
+          <img class="logo"
+            src="./assets/argentBankLogo.png"
+            alt="Argent Bank Logo"
+            className="header__nav-logo__image"
+          />
+          <h1 className="sr-only">Argent Bank</h1>
+        </Link>
+      </div>
+      {/* Gestion au token */}
+      <div className="header__nav__item">
+        {!isLogged ? (
+          <Link to="/login">
+            <img className="user_icon" src="./assets/user_bank.svg" alt="user icon"  />
+            Sign in
+          </Link>
+        ) : (
+          <>
+            <Link to={`/user/${id}`}>
+              <img src=".assets/user_bank.svg" alt="user icon" className="user_icon" />
+              {firstName}
+            </Link>
+            <Link to="/" onClick={handleDisconnect}>
+              <img src="../../../public/assets/sign_out.svg" alt="Logout icon" className="user_icon" /> Sign
+              Out
+            </Link>
+          </>
+        )}
+      </div>
+    </nav>
+  );
+};
+
+Header.propTypes = {
+  firstName: PropTypes.string.isRequired,
+  isLogged: PropTypes.bool.isRequired,
+  id: PropTypes.string.isRequired,
+  remember: PropTypes.bool.isRequired,
+  disconnect: PropTypes.func,
+  onlyDisconnect: PropTypes.func,
+};
+Header.defaultProps = {
+  id: "",
+  remember: false,
+};
+export default Header;
