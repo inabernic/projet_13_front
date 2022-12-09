@@ -3,12 +3,11 @@ import PropTypes from "prop-types";
 import "./Button.css";
 /**
  *
- *  C'est une fonction qui renvoie un élément de bouton avec un className, un type et un gestionnaire
- * d'événements onClick.
- * @prop   {String}  nameClass  contenu de l'attribut className
- * @prop   {String}  title      intitulé du bouton
- * @prop   {String}  type      type du bouton
- * @prop   {Function} onClick  event sur le bouton
+ *  It is a function that returns a button element with a className, type and onClick event handler.
+ * @prop   {String}  nameClass  content of the className attribute
+ * @prop   {String}  title      title of the button
+ * @prop   {String}  type       type of button
+ * @prop   {Function} onClick    event of the button
  * @return  {React.ReactElement}
  */
 const Button = ({ nameClass, title, type, onClick }) => {
@@ -29,6 +28,6 @@ Button.propTypes = {
   onClick: PropTypes.func,
 };
 Button.defaultProps = {
-  onClick: () => {},
+  onClick: () => { },
 };
 export default Button;

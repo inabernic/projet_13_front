@@ -6,18 +6,17 @@ import './Header.css'
 
 
 /**
- * C'est une fonction qui renvoie un élément de navigation avec un logo et un lien vers la page de
- * connexion si l'utilisateur n'est pas connecté, et un lien vers le profil de l'utilisateur et un lien
- * pour se déconnecter si l'utilisateur est connecté
+ * It is a function that returns a navigation element with a logo and a link to the page of
+login if the user is not logged in, and a link to the user's profile and a link to log out if the user is logged in
  *
- * @prop   {String}  firstName       prénom de l'utilisateur
- * @prop   {Boolean}  isLogged        Si l'utilisateur est connecté
- * @prop   {Function}  disconnect      Si l'utilisateur a choisi de garder sa session
- * @prop   {Function}  onlyDisconnect  Si l'utilisateur à fermer sa session
- * @prop   {String}  id              De l'utilisateur
- * @prop   {Boolean}  remember        choix d'une session (ouverte / fermée)
+ * @prop   {String}  firstName       user's first name
+ * @prop   {Boolean}  isLogged        the user is logged in
+ * @prop   {Function}  disconnect      the user has chosen to keep his session
+ * @prop   {Function}  onlyDisconnect  the user to log off
+ * @prop   {String}  id              id of the user
+ * @prop   {Boolean}  remember        choice of a session (open / closed)
  *
- * @return  {React.ReactElement}  Un élément de navigation avec un logo et un lien vers la page de connexion.
+ * @return  {React.ReactElement} A navigation element with a logo and a link to the login page.
  */
 const Header = ({
   firstName,
@@ -39,29 +38,28 @@ const Header = ({
     <nav className="header__nav">
       <div className="header__nav-logo">
         <Link to="/">
-          <img class="logo"
-            src="./assets/argentBankLogo.png"
+          <img className="logo header__nav-logo__image"
+            src="../assets/argentBankLogo.png"
             alt="Argent Bank Logo"
-            className="header__nav-logo__image"
           />
           <h1 className="sr-only">Argent Bank</h1>
         </Link>
       </div>
-      {/* Gestion au token */}
+      {/* Token */}
       <div className="header__nav__item">
         {!isLogged ? (
           <Link to="/login">
-            <img className="user_icon" src="./assets/user_bank.svg" alt="user icon"  />
+            <img className="user_icon" src="../assets/user_bank.svg" alt="user icon"  />
             Sign in
           </Link>
         ) : (
           <>
             <Link to={`/user/${id}`}>
-              <img src=".assets/user_bank.svg" alt="user icon" className="user_icon" />
+              <img src="../assets/user_bank.svg" alt="user icon" className="user_icon" />
               {firstName}
             </Link>
             <Link to="/" onClick={handleDisconnect}>
-              <img src="../../../public/assets/sign_out.svg" alt="Logout icon" className="user_icon" /> Sign
+              <img src="../assets/sign_out.svg" alt="Logout icon" className="user_icon" /> Sign
               Out
             </Link>
           </>

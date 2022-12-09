@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {
     CHANGE_FIELD,
     USER_CREDENTIAL,

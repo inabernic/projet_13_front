@@ -4,17 +4,17 @@ import { fromLowerToUpperCase} from '../../../src/utils/util';
 import "./Input.css";
 
 /**
- * C'est une fonction qui renvoie un div avec une étiquette et une entrée
+ * It's a function that returns a div with a label and an input
  *
- * @prop   {String}  type   Type de l'input
- * @prop   {String}  label  Contenu du label et propriété htmlFor ainsi que l'id de l'input
- * @prop   {function} onChange initie l'action
- * @prop   {String}  value valeur d'entree de l'input
- * @prop   {String}  name identifiant de l'input
- * @prop   {String}  placeholder ce qui est attendu dans le champs
+ * @prop   {String}  type   Type of the input
+ * @prop   {String}  label  Label content and htmlFor property as well as the input id
+ * @prop   {function} onChange initiate the action
+ * @prop   {String}  value input value
+ * @prop   {String}  name input identifier
+ * @prop   {String}  placeholder what is expected in the field
  * @prop   {Boolean}  focus autofocus
  *
- * @return  {React.ReactElement} une div avec un label et un input
+ * @return  {React.ReactElement} a div with a label and an input
  */
 const Input = ({ type, label, onChange, value, name, placeholder, focus }) => {
   const handleChange = (evt) => {

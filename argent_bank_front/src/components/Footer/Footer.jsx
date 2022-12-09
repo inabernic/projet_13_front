@@ -1,8 +1,7 @@
 import React from "react";
 
 /**
- * Il renvoie un div avec une classe de footer, qui contient un paragraphe avec une classe de
- * footer__text, qui contient le texte "Copyright 2020 Argent Bank"
+ the return of a div with a "footer" class
  *
  * @return  {React.ReactElement}
  */

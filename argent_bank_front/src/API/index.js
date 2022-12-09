@@ -1,6 +1,6 @@
 import axios from "axios";
 
-/* Création d'une nouvelle instance d'axios avec la baseURL, les en-têtes et le délai d'attente. */
+/*Creating a new axios instance with baseURL, headers and timeout. */
 export default axios.create({
     baseURL: "http://localhost:3001/api/v1/",
     headers: {

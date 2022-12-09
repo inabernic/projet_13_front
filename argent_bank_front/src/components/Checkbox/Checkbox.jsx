@@ -5,14 +5,13 @@ import PropTypes from "prop-types";
 import "./Checkbox.css";
 
 /**
- * Il rend une case à cocher qui, lorsqu'elle est cliqué, appelle la fonction onChange avec le nom de
- * la case à cocher et si elle est cochée ou non
+ * The checkbox which, when clicked, calls the onChange function with the name of the checkbox and whether it is checked or not
  *
  * @prop   {Boolean}  checked   [checked description]
  * @prop   {String}  name      [name description]
  * @prop   {Function}  onChange  [onChange description]
  *
- * @return  {React.ReactElement}            Un composant React qui affiche une case à cocher.
+ * @return  {React.ReactElement}   A React component that displays a checkbox
  */
 const Checkbox = ({ checked, name, onChange }) => {
   function handleChange(evt) {

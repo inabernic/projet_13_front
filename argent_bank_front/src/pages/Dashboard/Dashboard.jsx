@@ -1,9 +1,6 @@
 import React from 'react'
-
 //STYLE
 import './Dashboard.css'
-
-//----------------------COMPONNETS--------------------
 
 
 export default function Dashboard() {

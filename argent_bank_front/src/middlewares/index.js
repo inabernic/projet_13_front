@@ -9,7 +9,7 @@ import {
     upDateIdentity,
 } from "../actions/user";
 
-const user = (store) => (next) => async (action) => {
+const myMiddlware = (store) => (next) => async (action) => {
     switch (action.type) {
         case SEND_LOGIN_FORM: {
             sessionStorage.clear();
@@ -78,8 +78,9 @@ const user = (store) => (next) => async (action) => {
             break;
 
         default:
+            console.log(action);
             next(action);
     }
 };
 
-export default user;
+export default myMiddlware;

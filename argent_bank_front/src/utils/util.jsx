@@ -3,10 +3,9 @@ import chat from "../assets/icon-chat.png";
 import security from "../assets/icon-security.png";
 
 /**
- * Si la chaîne src inclut le mot "money", renvoie l'image de l'argent, si elle inclut le mot
- * "security", renvoie l'image de sécurité, et si elle inclut le mot "chat", renvoie l'image du chat
- * @param {String} src - La source de l'image.
- * @returns l'image qui correspond au src.
+ *If the src string includes the word "money", returns the money image, if it includes the word "security", returns the security image, and if it includes the word "cat", returns the image Of the cat
+ * @param {String} src -  The source of the image
+ * @returns  -  the image that matches the src
  */
 
 
@@ -24,10 +23,9 @@ export function checkImage(src) {
 }
 
 /**
- * Si la chaîne n'est pas vide, Convertit le premier caractère d'une chaîne en majuscule et le reste en minuscule.
- * @param {String} str - Chaîne à convertir.
- * @returns {String} Le premier caractère de la chaîne est converti en majuscule et le reste de la chaîne est
- * converti en minuscule.
+ * If the string is not empty, Converts the first character of a string to uppercase and the rest to lowercase.
+ * @param {String} str - String to convert
+ * @returns {String} The first character of the string is converted to uppercase and the rest of the string is converted to lowercase.
  */
 export function fromLowerToUpperCase(str) {
   if (str.length > 0) {
@@ -36,9 +34,10 @@ export function fromLowerToUpperCase(str) {
 }
 
 /**
- * Il renvoie vrai si l'adresse e-mail est valide et faux si ce n'est pas le cas
- * @param {String} email - L'adresse e-mail à tester.
- * @returns {Boolean} Une valeur booléenne.
+ *
+It returns true if the email address is valid and false if it is not.
+ * @param {String} email - The email address to test.
+ * @returns {Boolean} A Boolean value.
  */
 export function checkEmail(email) {
   const testEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]{2,}[.][A-Z]{2,4}$/gim;
@@ -46,10 +45,11 @@ export function checkEmail(email) {
 }
 
 /**
- * Il vérifie si le mot de passe comporte entre 8 et 15 caractères, contient au moins une lettre
- * minuscule, une lettre majuscule et un chiffre
- * @param {String} password - Le mot de passe à tester.
- * @returns {Boolean} Une valeur booléenne.
+ * It checks if the password is between 8 and 15 characters, contains at least one letter
+ * lowercase, an uppercase letter and a number
+ * @param {String} password - 
+The password to test.
+ * @returns {Boolean}
  */
 export function checkPassword(password) {
   const testPassword =
@@ -58,12 +58,13 @@ export function checkPassword(password) {
 }
 
 /**
- * Il prend quatre arguments et renvoie un objet avec quatre propriétés
- * @param {String} date - La date de la transaction
- * @param {String} description - Le descriptif de l'opération
- * @param {number} amount - Le montant d'argent qui a été dépensé ou reçu.
- * @param {number} balance - Le solde du compte après la transaction.
- * @returns Un objet avec les propriétés date, description, montant et solde.
+ * It takes four arguments and returns an object with four properties
+ * @param {String} date - The date of the transaction
+ * @param {String} description - The description of the operation
+ * @param {number} amount - The amount of money that has been spent or received.
+ * @param {number} balance - 
+The account balance after the transaction.
+ * @returns An object with date, description, amount, and balance properties.
  */
 export function createData(date, description, amount, balance) {
   return {
