@@ -30,7 +30,7 @@ const Account = ({ title, amount, deal, type, linkId }) => {
             <div className="account-content-wrapper verif">
                 <Link to={`account/${linkId}`} className="account__link-button">
                     <Button
-                        nameClass="transaction-button"
+                        className="transaction-button"
                         title="View transactions"
                         type="button"
                     ></Button>

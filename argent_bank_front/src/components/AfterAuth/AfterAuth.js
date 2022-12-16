@@ -76,7 +76,7 @@ const AfterAuth = ({
             <Button
                 type="button"
                 title="Edit Name"
-                nameClass="edit-button edit-name"
+                className="edit-button edit-name"
                 onClick={handleRenderModale}
             />
 
@@ -87,21 +87,23 @@ const AfterAuth = ({
                         name={"firstName"}
                         value={firstName}
                         placeholder={firstName}
+                        required
                     />
                     <Input
                         type={"text"}
                         name={"lastName"}
                         value={lastName}
                         placeholder={lastName}
+                        required
                     />
                 </div>
                 {<span className="formulaire_container__confirmation">{message}</span>}
                 <div className="formulaire_container__bloc-button">
-                    <Button type="submit" title="Save" nameClass="edit-button save" />
+                    <Button type="submit" title="Save" className="edit-button save" />
                     <Button
                         type="button"
                         title="Cancel"
-                        nameClass="edit-button cancel"
+                        className="edit-button cancel"
                         onClick={handleRenderModale}
                     />
                 </div>
