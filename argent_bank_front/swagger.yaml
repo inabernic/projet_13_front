@@ -168,8 +168,8 @@ paths:
     get:
       tags:
       - User Transactions
-      summary: Transaction details
-      description: API for getting a single transaction details
+      summary: Transaction detail
+      description: API for getting a single transaction detail
       parameters:
       - in: header
         name: Authorization
