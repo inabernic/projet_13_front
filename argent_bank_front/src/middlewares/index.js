@@ -19,7 +19,7 @@ const myMiddlware = (store) => (next) => async (action) => {
                     password: action.payload.password,
                 })
                     .then((rep) => {
-                        // le token est placé dans le sessionStorage
+                        // the token is placed in the sessionStorage
                         sessionStorage.setItem("token", rep.data.body.token);
                         return rep.data;
                     })
@@ -28,6 +28,7 @@ const myMiddlware = (store) => (next) => async (action) => {
                         store.dispatch(error_msg);
                     });
                 if (logUser.status === 200) {
+                    //status property to track the status of the request.
                     const response = setLoginDatas(action.payload, logUser);
                     store.dispatch(response);
                 }
