@@ -19,6 +19,7 @@ function FormProvider({ children }) {
             isValid,
         };
     }, [isValid]);
+    //Chaque objet Context est livré avec un composant Provider React qui permet aux composants consommateurs de s'abonner aux changements de contexte.
     return <Context.Provider value={value}>{children}</Context.Provider>
 }
 
